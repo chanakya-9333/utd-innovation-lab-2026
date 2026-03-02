@@ -1,2 +1,188 @@
-# Chanakya Alluri
-demo 1 
+# Week 1 – Stack Recommendations  
+Author: Chanakya Alluri  
+Team 4A – Bot Architecture & Integration  
+
+---
+
+## Assumptions for Cost Modeling
+- Average voice interaction: 3 minutes per user  
+- 5 WhatsApp messages per user  
+- Moderate CRM logging + workflow automation  
+- WhatsApp pricing varies by region and message category  
+- Costs are directional estimates for academic modeling  
+
+---
+
+# STACK 1 — Custom Modular Architecture (Maximum Control)
+
+**WhatsApp API Provider:** Meta Business Platform (Direct API)  
+**Voice Bot Platform:** VAPI  
+**Orchestration Layer:** n8n (self-hosted)  
+**Website Integration Approach:** Shared backend API with dynamic site context switching  
+
+---
+
+## Architecture Diagram
+
+Voice Caller  
+→ VAPI (STT → LLM → TTS)  
+→ Webhook → n8n  
+→ CRM / Database  
+→ WhatsApp (Meta Direct API)  
+→ Shared Backend  
+→ radhakrishnatemple.net  
+→ jkyog.org  
+
+---
+
+## Monthly Cost Estimates
+
+| Scale | Estimated Total |
+|--------|----------------|
+| 1K users | $370 – $1,170 |
+| 10K users | $3,480 – $10,600 |
+| 100K users | $34,300 – $103,500 |
+
+---
+
+## Implementation Complexity
+High  
+
+---
+
+## Pros
+- Full technical ownership  
+- Highly customizable workflows  
+- Strong long-term scalability  
+- Clean dual-site architecture compatibility  
+
+## Cons
+- High engineering overhead  
+- Modular pricing complexity  
+- Requires infrastructure management  
+
+---
+
+## Recommended Use Case
+Organizations with technical resources seeking maximum architectural flexibility and long-term control.
+
+---
+
+# STACK 2 — Balanced Production Stack (Recommended)
+
+**WhatsApp API Provider:** Twilio  
+**Voice Bot Platform:** Retell AI  
+**Orchestration Layer:** Make.com  
+**Website Integration Approach:** Shared backend with unified analytics database  
+
+---
+
+## Architecture Diagram
+
+Voice Caller  
+→ Retell AI  
+→ Webhook → Make.com  
+→ CRM update  
+→ WhatsApp (Twilio)  
+→ Shared Backend  
+→ Temple Site  
+→ JKYog Site  
+
+---
+
+## Monthly Cost Estimates
+
+| Scale | Estimated Total |
+|--------|----------------|
+| 1K users | $280 – $410 |
+| 10K users | $2,650 – $3,350 |
+| 100K users | $26,150 – $31,800 |
+
+---
+
+## Implementation Complexity
+Medium  
+
+---
+
+## Pros
+- Production-ready setup  
+- Predictable per-minute voice pricing  
+- Clean webhook integration  
+- Balanced cost-to-performance ratio  
+
+## Cons
+- Less customizable than fully modular stack  
+- Higher vendor dependency  
+
+---
+
+## Recommended Use Case
+Temple helpline, event registrations, WhatsApp confirmations, and scalable mid-volume support deployment.
+
+---
+
+# STACK 3 — Platform-Led Rapid Deployment (MVP-Oriented)
+
+**WhatsApp API Provider:** Zixflow or WANotifier  
+**Voice Bot Platform:** GoHighLevel (native voice + SMS)  
+**Orchestration Layer:** GoHighLevel native workflows  
+**Website Integration Approach:** Native GHL widget with lightweight backend sync  
+
+---
+
+## Architecture Diagram
+
+Website User → GHL Chat Widget  
+Voice/SMS User → GHL Conversations  
+→ Native Automations  
+→ CRM Pipeline  
+→ WhatsApp Integration  
+→ Follow-ups  
+
+---
+
+## Monthly Cost Estimates
+
+| Scale | Estimated Total |
+|--------|----------------|
+| 1K users | $127 – $747+ |
+| 10K users | $647 – $2,797+ |
+| 100K users | Custom Enterprise Pricing |
+
+---
+
+## Implementation Complexity
+Low–Medium  
+
+---
+
+## Pros
+- Fastest deployment  
+- Unified CRM and messaging  
+- Minimal engineering required  
+
+## Cons
+- Reduced architectural flexibility  
+- Less control over data layer  
+- Enterprise pricing required at scale  
+
+---
+
+# Final Recommendation
+
+**Primary Recommendation: STACK 2 — Balanced Production Stack**
+
+Reason:
+- Best balance of scalability, integration simplicity, and cost predictability  
+- Strong fit for multi-channel architecture (Voice + WhatsApp + Website)  
+- Moderate implementation complexity  
+- Production-ready for temple-scale deployment  
+
+Secondary Options:
+- Stack 1 for long-term custom architecture ownership  
+- Stack 3 for rapid MVP deployment with minimal technical overhead  
+
+---
+
+End of Week 1 Stack Recommendations
