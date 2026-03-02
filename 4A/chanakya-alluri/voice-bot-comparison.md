@@ -10,6 +10,7 @@ This report presents a structured evaluation of leading conversational voice AI 
 **Bland AI**,  
 **Retell AI**, and  
 **PlayAI**.
+
 The purpose of this research is to:
 
 - Evaluate conversational voice AI systems through structured live testing  
